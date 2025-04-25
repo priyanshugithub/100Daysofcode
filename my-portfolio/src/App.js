@@ -2,9 +2,15 @@ import { useState } from "react";
 import CounterButton from "./CounterButton";     // ← new import
 import "./App.css";
 
+const initialButtons = [
+  { id: 1, label: "Alice clicks",   clicks: 0 },
+  { id: 2, label: "Bob clicks",     clicks: 0 },
+  { id: 3, label: "Charlie clicks", clicks: 0 }
+];
+
 export default function App() {
-  const [clicks, setClicks] = useState(0);
   const [showCounters, setShowCounters] = useState(true);
+  const [buttons, setButtons] = useState(initialButtons);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6">
@@ -21,19 +27,24 @@ export default function App() {
       </label>
 
       {showCounters && (
-        <>
-          <CounterButton
-            label="Button A"
-            count={clicks}
-            onIncrement={() => setClicks((c) => c + 1)}
-          />
-          <CounterButton
-            label="Button B"
-            count={clicks}
-            onIncrement={() => setClicks((c) => c + 1)}
-          />
-        </>
-      )}
+  <ul className="flex flex-col gap-4">
+    {buttons.map(btn => (
+      <li key={btn.id}>
+        <CounterButton
+          label={btn.label}
+          count={btn.clicks}
+          onIncrement={() =>
+            setButtons(bs =>
+              bs.map(b =>
+                b.id === btn.id ? { ...b, clicks: b.clicks + 1 } : b
+              )
+            )
+          }
+        />
+      </li>
+    ))}
+  </ul>
+)}
     </main>
   );
 }
