@@ -4,7 +4,7 @@ import "./App.css";
 
 export default function App() {
   const [clicks, setClicks] = useState(0);
-  const [showCounters, setShowCounters] = useState(false);
+  const [showCounters, setShowCounters] = useState(true);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-6">
@@ -14,8 +14,8 @@ export default function App() {
       <label className="flex items-center gap-2 text-lg">
         <input
           type="checkbox"
-          defaultChecked
-          className={showCounters ? "block" : "hidden"}
+          checked={showCounters}
+          onChange={e => setShowCounters(e.target.checked)}
         />
         Show counters
       </label>
