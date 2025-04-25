@@ -43,8 +43,17 @@ export default function App() {
         />
       </li>
     ))}
-  </ul>
-)}
+  </ul>)}
+  <button
+    onClick={() =>
+      setButtons(bs => bs.map(b => ({ ...b, clicks: 0 })))
+    }
+    className="rounded-lg border px-4 py-2 hover:bg-gray-100"
+  >
+    Reset all
+  </button>
+ 
+
     </main>
   );
 }
