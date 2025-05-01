@@ -1,8 +1,7 @@
-/* eslint-env node */
-module.exports = {
+ /* eslint-env node */
+ module.exports = {
   plugins: {
-    // ⬅️  use the new package name
-    '@tailwindcss/postcss': {},
+   '@tailwindcss/postcss': {}, // ✅ new PostCSS plugin
     autoprefixer: {},
   },
 };
