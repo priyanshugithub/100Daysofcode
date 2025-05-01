@@ -1,6 +1,11 @@
-/* eslint-env node */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx}"],   // all your JSX lives in src/
-  theme: { extend: {} },
+  content: ["./src/**/*.{js,jsx}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      fontFamily: { sans: ["Inter", "ui-sans-serif"] },
+    },
+  },
   plugins: [],
 };
