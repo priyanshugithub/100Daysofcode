@@ -1,14 +1,6 @@
 import { React, useState } from "react";
-//import CounterButton from "./CounterButton";     // ← new import
-//import "./App.css";
 import Button from "./Button";
 import { RefreshCcw } from "lucide-react";
-
-// const initialButtons = [
-//   { id: 1, label: "Alice clicks",   clicks: 0 },
-//   { id: 2, label: "Bob clicks",     clicks: 0 },
-//   { id: 3, label: "Charlie clicks", clicks: 0 }
-// ];
 
 export default function App() {
   const [buttons, setButtons] = useState([
@@ -19,12 +11,12 @@ export default function App() {
 
   return (
     // App.jsx (outer <main>)
-<main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white
+      <main className="min-h-screen bg-gradient-to-br from-indigo-50 to-white
                 flex flex-col items-center px-4 py-10 text-slate-800
                 dark:from-slate-900 dark:to-slate-800 dark:text-slate-100">
 
       <h1 className="text-3xl font-bold bg-amber-300">Tailwind live!</h1>
-      <p>First React project since my 3-year break 🎉</p>
+      <p>First React project since my 3-year break </p>
 
       {/* —— Add-counter form —— */}
       <form
