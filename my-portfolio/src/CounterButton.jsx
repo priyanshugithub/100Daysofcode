@@ -1,5 +1,7 @@
 // CounterButton.jsx
-export default function CounterButton({ label, count, onIncrement }) {
+import React from "react";
+
+export default function CounterButton({ count, onIncrement }) {
     return (
       <button
         onClick={onIncrement}
